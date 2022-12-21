@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brightcove</title>
+
+    <!-- Implement Advertising with IMA3 Plugin CSS -->
+    <link
+      rel="stylesheet"
+      href="https://players.brightcove.net/videojs-ima3/4/videojs-ima3.css"
+    />
+  </head>
+
+  <body>
+    <div style="max-width: 960px">
+      <style>
+        video-js.video-js.vjs-fluid:not(.vjs-audio-only-mode) {
+          padding-top: 56.25%;
+        }
+      </style>
+      <video-js
+        id="myPlayerID"
+        data-account="6136710638001"
+        data-player="pznAkIAB2"
+        data-embed="default"
+        controls=""
+        data-video-id="6317468924112"
+        data-playlist-id=""
+        data-application-id=""
+        class="vjs-fluid"
+      ></video-js>
+    </div>
+
+    <script src="https://players.brightcove.net/6136710638001/pznAkIAB2_default/index.min.js"></script>
+
+    <!-- Implement Advertising with IMA3 Plugin JavaScript -->
+    <script src="https://players.brightcove.net/videojs-ima3/4/videojs-ima3.min.js"></script>
+
+    <script>
+      videojs.getPlayer("myPlayerID").ready(function () {
+        var myPlayer = this;
+
+        // Implement Advertising with IMA3 Plugin Code
+        myPlayer.ima3({
+          requestMode: "onload",
+          serverUrl:
+            "https://cs1.brightcodes.net/bclay/downloads/adResponse.xml",
+          timeout: 5000,
+        });
+      });
+    </script>
+  </body>
+</html>

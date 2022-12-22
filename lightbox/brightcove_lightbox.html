@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brightcove</title>
+    <link rel="stylesheet" href="custom_plugin.css" />
+  </head>
+
+  <body>
+    <div class="player-block" style="max-width: 960px">
+
+      <!-- main container -->
+    <div id="container">
+      <!-- This container is for the clickable video poster image -->
+    </div>
+      <!-- lightbox container -->
+    <div id="playerLightbox" class="playerHide">
+      <video-js
+        id="myPlayerID"
+        data-account="6136710638001"
+        data-player="pBJNBVOio"
+        data-embed="default"
+        controls=""
+        data-video-id="6136965285001"
+        data-playlist-id=""
+        data-application-id=""
+        class="vjs-fluid"
+      ></video-js>
+      <!-- close player button -->
+      <div id="playerClose" class="playerClose" onClick="hideAndStop();">Close</div>
+    </div>
+    </div>
+    <script src="https://players.brightcove.net/6136710638001/pBJNBVOio_default/index.min.js"></script>
+    <script src="custom_plugin.js"></script>
+
+    <script>
+      videojs.getPlayer("myPlayerID").ready(function () {
+        var myPlayer = this;
+        myPlayer.lightboxVideo();
+      });
+    </script>
+  </body>
+</html>

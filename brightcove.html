@@ -32,9 +32,17 @@
       videojs.getPlayer("myPlayerID").ready(function () {
         var myPlayer = this;
 
-        myPlayer.on("loadedmetadata", function () {
-          myPlayer.muted(true);
+        myPlayer.muted(true);
+
+        myPlayer.on("timeupdate", function () {          
+          if (myPlayer.currentTime() > 10) {
+            myPlayer.pause()
+          }
         });
+        
+        
+
+
 
       });
     </script>
